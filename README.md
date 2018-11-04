@@ -16,10 +16,12 @@ File Reader
 
 ## Setup
 - Fork/clone git repository and run npm install in frontend directory
-- Fork/clone git repository and run npm install in backend directory
-- Use `npm run watch` to run webpack in order to setup local environment
+- Use `npm run watch` in frontend folder to run webpack in order to setup local environment
+- For build version run `npm run build` from frontend folder
+- For frontend .env file: 
+  - create file and add:
+    - `API_URL=http://localhost:choose your port`
 
-- For build version run `npm run build`
 
 ## Tools Used
 - Backend from [sluggram](http://github.com/slugbyte/sluggram) 
