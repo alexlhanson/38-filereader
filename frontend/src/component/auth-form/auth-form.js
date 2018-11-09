@@ -31,7 +31,9 @@ export default class AuthForm extends React.Component {
 
     this.props.onComplete(this.state)
       .then(() => {
-        this.props.redirect('/todo');
+        this.props.auth === 'signup' ? 
+        this.props.redirect('/settings'):
+        this.props.redirect('/dashboard')
       })
       .catch(console.error);
 

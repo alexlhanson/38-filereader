@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 
 import LandingContainer from '../landing/landing';
 import DashboardContainer from '../dashboard/dashboard';
+import SettingsContainer from '../settings/settings';
 import createAppStore from '../../lib/store';
 import { Navbar, Nav, NavItem} from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
@@ -18,7 +19,7 @@ export default class App extends React.Component {
           <BrowserRouter>
             <div>
               <header>
-                <h1>To-Do Lists</h1>
+                <h1>Photo Share</h1>
                 <Navbar>
                   <Nav>
                     <LinkContainer to="/welcome/signup">
@@ -34,12 +35,12 @@ export default class App extends React.Component {
                       <NavItem>Dashboard</NavItem>
                     </LinkContainer>
                   </Nav>
-                </Navbar>;
+                </Navbar>
 
               </header>
               <main>
                 <Route exact path='/welcome/:auth' component={LandingContainer} />
-                <Route exact path='/settings' component={DashboardContainer} />
+                <Route exact path='/settings' component={SettingsContainer} />
                 <Route exact path='/dashboard' component={DashboardContainer} />
               </main>
             </div>
