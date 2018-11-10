@@ -7,10 +7,10 @@ body {
 
 .navbar-default {
   background-color: $button; 
-  
-  a {
-    font-weight: 600;
-  }
+};
+
+.navbar-default .navbar-nav>li>a {
+  color: white;
 }
 
 h1 {
