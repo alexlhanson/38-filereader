@@ -1,0 +1,22 @@
+@import '../../style/vars';
+
+#profile-form {
+  background-color: $secondary;
+  margin: 30px;
+  border: solid;
+  border-width: 1px;
+  border-radius: $border-radius;
+  border-color: $border-color;
+  text-align: left;
+  font-family: $form-font;
+
+  label {
+    margin-right: 20px;
+  }
+  
+  input {
+    display: inline;
+    margin-left: 20px;
+    background-color: $primary;
+  }
+}
