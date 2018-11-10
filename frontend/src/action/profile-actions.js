@@ -6,14 +6,14 @@ import superagent from 'superagent';
 
 export const profileCreate = profile => {
   return {
-    type: profile,
+    type: 'PROFILE_CREATE',
     payload: profile
   }
 }
 
-export const profileUpdate = profile => {
+export const profileSet = profile => {
   return {
-    type: profile,
+    type: 'PROFILE_SET',
     payload: profile
   }
 }
@@ -29,8 +29,20 @@ export const profileCreateRequest = profile => dispatch => {
     .set("Authorization", "Bearer " + token)
     .send(profile)
     .then(res => {
-      console.log(res)
-      dispatch(profileCreate(res.body.profile))
+      console.log('getting into create', res.body._id);
+
+      localStorage.userId = JSON.stringify(res.body._id);
+      dispatch(profileCreate(res.body));
       return res;
+    })
+}
+
+export const profileFetchRequest = () => dispatch => {
+  let token = localStorage.getItem('token');
+  return superagent.get(`$__API_URL__}/profiles/me`)
+    .set("Authorization", "Bearer " + token)
+    .then(res => {
+      console.log(res);
+      dispatch(profileSet(res.body));
     })
 }

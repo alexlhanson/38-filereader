@@ -6,7 +6,7 @@ import {bearerAuth} from './parser-auth.js'
 
 export default new Router()
 .post('/profiles', bearerAuth, parserBody, (req, res, next) => {
-   Profile.create(req)
+  Profile.create(req)
   .then(res.json)
   .catch(next)
 })
@@ -19,8 +19,9 @@ export default new Router()
   Profile.findOne({owner: req.user._id})
   .then(profile => {
     if(!profile)
-      return next(createError(404, 'NOT FOUND ERROR: profile not found'))
-    res.json(profile)
+      return next(createError(404, 'NOT FOUND ERROR: profile not found'));
+    console.log(profile);
+    res.send(profile);
   })
   .catch(next)
 })

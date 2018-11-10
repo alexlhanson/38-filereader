@@ -12,6 +12,7 @@ import {LinkContainer} from 'react-router-bootstrap';
 const store = createAppStore();
 
 export default class App extends React.Component {
+
   render() {
     return (
       <section id="redux-application">

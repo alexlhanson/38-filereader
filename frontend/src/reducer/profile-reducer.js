@@ -4,7 +4,10 @@ export default(state = initialState, action ) => {
 
   switch (type) {
     case 'PROFILE_CREATE':
-      return [...state, payload];
+      return payload;
+
+    case 'PROFILE_SET':
+      return payload;
 
     default:
       return state;
